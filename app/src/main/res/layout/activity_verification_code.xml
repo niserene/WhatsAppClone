@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/verifyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Verfiy 7896541230"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/navy_blue_dark" />
+
+    <TextView
+        android:id="@+id/waitingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Waiting to automatically detect an SMS code on this number so that we cann call you"
+        android:textAlignment="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/grey" />
+
+    <TextView
+        android:id="@+id/counterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="Seconds remaining 00:10s"/>
+
+    <EditText
+        android:id="@+id/sendCodeText"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:imeActionId="6"
+        android:imeActionLabel="Send"
+        android:imeOptions="actionUnspecified"
+        android:letterSpacing="1"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:maxLength="6"
+        android:hint="- - - - - -"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:backgroundTint="@color/navy_blue_dark"
+        android:ems="13" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Enter the 6 digit code"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/verifyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify the code"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAllCaps="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:backgroundTint="@color/green_light"
+        app:cornerRadius="5dp"
+        android:textColor="@color/white"
+        android:enabled="true"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resendBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resend SMS"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAllCaps="true"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:backgroundTint="@color/green_light"
+        app:cornerRadius="5dp"
+        android:textColor="@color/white"
+        android:enabled="false"/>
+
+</LinearLayout>
