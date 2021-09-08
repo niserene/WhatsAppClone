@@ -40,6 +40,7 @@ class VerificationCodeActivity : AppCompatActivity(), View.OnClickListener {
 
         initViews()
         startVerify()
+
     }
 
     private fun startVerify() {
@@ -137,7 +138,8 @@ class VerificationCodeActivity : AppCompatActivity(), View.OnClickListener {
                         progressDialog.dismiss()
                     }
                     if(it.isSuccessful){
-                        notifyUser("you are authenticated :)")
+                        startActivity(Intent(this , SignUpActivity::class.java))
+                        finish()
                     }
                     else{
                         notifyUser("Phone Number verification failed")
@@ -154,7 +156,7 @@ class VerificationCodeActivity : AppCompatActivity(), View.OnClickListener {
         val span = SpannableString(getString(R.string.waiting_text, phoneNumber))
         val clickableSpan = object : ClickableSpan(){
 
-            override fun onClick(p0: View) {
+            override fun onClick(view: View) {
                 //go to the previous ie LoginActivity
                 showLoginActivity()
             }

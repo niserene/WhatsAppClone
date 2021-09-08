@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/navy_blue_dark"
+        android:text="Profile Info"/>
+
+    <TextView
+        android:id="@+id/header_subtitle"
+        android:text="Please provide your name and profile photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:padding = "10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userImageview"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:adjustViewBounds="true"
+        app:shapeAppearanceOverlay="@style/RoundedImageView"
+        android:src="@drawable/user"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/usernameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Your name here"
+        android:textColor="@color/navy_blue_dark"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:gravity="center">
+
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/uploadBtn"
+            android:text="Upload Image"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/navy_blue_dark"
+            android:layout_width="wrap_content"
+            android:drawableEnd="@drawable/baseline_cloud_upload"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/nextBtn"
+            android:text="Next"
+            android:layout_margin="15dp"
+            android:backgroundTint="@color/navy_blue_dark"
+            android:drawableEnd="@drawable/baseline_navigate_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>
