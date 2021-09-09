@@ -1,4 +1,4 @@
-package com.nishantdev961.whatsappclone
+package com.nishantdev961.whatsappclone.auth
 
 import android.app.ProgressDialog
 import android.content.Context
@@ -19,7 +19,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
-import kotlinx.android.synthetic.main.activity_login.*
+import com.nishantdev961.whatsappclone.R
+import com.nishantdev961.whatsappclone.auth.LoginActivity
+import com.nishantdev961.whatsappclone.auth.SignUpActivity
 import kotlinx.android.synthetic.main.activity_verification_code.*
 import java.util.concurrent.TimeUnit
 
@@ -63,7 +65,7 @@ class VerificationCodeActivity : AppCompatActivity(), View.OnClickListener {
         counterText.isVisible = true
         mCounterDown = object : CountDownTimer(timeInMills, 1000){
             override fun onTick(millisUntilFinished: Long) {
-                counterText.text = getString(R.string.seconds_remaining, (millisUntilFinished/1000).toString())
+                counterText.text = getString(com.nishantdev961.whatsappclone.R.string.seconds_remaining, (millisUntilFinished/1000).toString())
             }
 
             override fun onFinish() {
@@ -82,7 +84,7 @@ class VerificationCodeActivity : AppCompatActivity(), View.OnClickListener {
     private fun initViews(){
 
         phoneNumber = intent.getStringExtra(PHONE_NUMBER)
-        verifyText.text = getString(R.string.verify_number, phoneNumber)
+        verifyText.text = getString(com.nishantdev961.whatsappclone.R.string.verify_number, phoneNumber)
         setSpannableString()
 
         verifyBtn.setOnClickListener(this)
@@ -153,7 +155,7 @@ class VerificationCodeActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setSpannableString() {
 
-        val span = SpannableString(getString(R.string.waiting_text, phoneNumber))
+        val span = SpannableString(getString(com.nishantdev961.whatsappclone.R.string.waiting_text, phoneNumber))
         val clickableSpan = object : ClickableSpan(){
 
             override fun onClick(view: View) {
@@ -210,7 +212,7 @@ class VerificationCodeActivity : AppCompatActivity(), View.OnClickListener {
                     signInWithPhoneAuthCredential(credential)
                 }
                 else{
-                    notifyUser("You haven't written the code")
+                    notifyUser("You haven't written the code + $sendCodeText")
                 }
             }
             resendBtn ->{

@@ -1,11 +1,11 @@
-package com.nishantdev961.whatsappclone
+package com.nishantdev961.whatsappclone.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.nishantdev961.whatsappclone.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {

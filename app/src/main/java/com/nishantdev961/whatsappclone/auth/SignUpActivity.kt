@@ -1,4 +1,4 @@
-package com.nishantdev961.whatsappclone
+package com.nishantdev961.whatsappclone.auth
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -13,13 +13,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import com.google.android.gms.tasks.Continuation
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
+import com.nishantdev961.whatsappclone.MainActivity
+import com.nishantdev961.whatsappclone.R
 import com.nishantdev961.whatsappclone.models.User
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
@@ -166,7 +167,7 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener{
                     uploadUserData(name)
                 }
             }
-            R.id.uploadBtn->{
+            R.id.uploadBtn ->{
                 if(!::uploadUrl.isInitialized){
                     Toast.makeText(this, "Image not chosen", Toast.LENGTH_LONG).show()
                 }
